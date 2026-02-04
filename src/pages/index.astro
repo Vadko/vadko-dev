@@ -117,31 +117,57 @@ const cicdSkills: string[] = [
       </div>
     </section>
 
-    <!-- Work Section -->
+    <!-- Experience Section -->
     <section id="work" class="py-24">
-      <h2 class="text-3xl font-bold text-white mb-8">Current Work</h2>
-      <div class="p-8 bg-gradient-to-br from-zinc-900 to-zinc-900/50 border border-zinc-800 rounded-2xl">
-        <div class="flex items-start gap-6">
-          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shrink-0">
-            S
-          </div>
-          <div class="space-y-4">
-            <div>
-              <h3 class="text-2xl font-bold text-white">Shares</h3>
-              <p class="text-emerald-400 font-medium">Senior React Native Developer</p>
+      <h2 class="text-3xl font-bold text-white mb-8">Experience</h2>
+      <div class="space-y-6">
+        
+        <!-- Current: Shares -->
+        <div class="p-8 bg-gradient-to-br from-zinc-900 to-zinc-900/50 border border-zinc-800 rounded-2xl">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shrink-0">
+              S
             </div>
-            <p class="text-zinc-400 text-lg leading-relaxed">
-              Working on a mobile investment app. Responsible for product features, 
-              performance optimization, and security. 
-              Managing CI/CD operations and driving continuous improvement across the mobile team.
-            </p>
-            <div class="flex flex-wrap gap-2 pt-2">
-              {mainTech.map((tech) => (
-                <span class="px-3 py-1 bg-zinc-800 rounded-full text-sm text-zinc-300">{tech}</span>
-              ))}
+            <div class="space-y-4 flex-1">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-2xl font-bold text-white">Shares</h3>
+                  <p class="text-emerald-400 font-medium">Senior React Native Developer</p>
+                </div>
+                <span class="text-zinc-500 text-sm">2021 — Present</span>
+              </div>
+              <p class="text-zinc-400 text-lg leading-relaxed">
+                Working on a mobile investment app. Responsible for product features, 
+                performance optimization, and security. 
+                Managing CI/CD operations and driving continuous improvement across the mobile team.
+              </p>
+              <div class="flex flex-wrap gap-2 pt-2">
+                {mainTech.map((tech) => (
+                  <span class="px-3 py-1 bg-zinc-800 rounded-full text-sm text-zinc-300">{tech}</span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Previous experience -->
+        <div class="p-6 bg-zinc-900/30 border border-zinc-800/50 rounded-xl">
+          <div class="space-y-4">
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold text-white">Mobile Developer</h3>
+                <p class="text-zinc-400">Various Companies & Freelance</p>
+              </div>
+              <span class="text-zinc-500 text-sm">2018 — 2021</span>
+            </div>
+            <p class="text-zinc-400 leading-relaxed">
+              Worked on multiple React Native projects for startups and established companies. 
+              Built mobile apps from scratch, implemented complex features, and maintained legacy codebases. 
+              Gained expertise in native modules, third-party integrations, and mobile-first architecture.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
