@@ -8,10 +8,11 @@ interface Props {
 
 const { 
   title, 
-  description = "Senior React Native Developer with 6+ years of experience. Creator of LBK Launcher and Hytale server host." 
+  description = "Senior React Native Developer with 6+ years of experience in mobile development. Expert in React Native, Expo, TypeScript, and native languages (Java, Kotlin, Swift). Creator of LBK Launcher with 64k+ downloads." 
 } = Astro.props;
 
 const siteUrl = "https://vadko.dev";
+const canonicalUrl = Astro.url.pathname === "/" ? siteUrl : `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -21,19 +22,30 @@ const siteUrl = "https://vadko.dev";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content="Vadym Pohlid" />
+    <meta name="keywords" content="React Native, Expo, TypeScript, JavaScript, Mobile Developer, iOS Developer, Android Developer, Java, Kotlin, Swift, Objective-C, Reanimated, Supabase, Node.js, Electron, CI/CD, Ukraine, Lviv, LBK Launcher, Vadym Pohlid, Vadko" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <link rel="canonical" href={canonicalUrl} />
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Vadym Pohlid — Senior React Native Developer" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@vadkointel" />
+    <meta name="twitter:creator" content="@vadkointel" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -52,17 +64,52 @@ const siteUrl = "https://vadko.dev";
       "name": "Vadym Pohlid",
       "alternateName": "Vadko",
       "url": siteUrl,
+      "image": `${siteUrl}/og-image.png`,
+      "email": "vadkointel@icloud.com",
       "jobTitle": "Senior React Native Developer",
       "worksFor": {
         "@type": "Organization",
         "name": "Shares"
       },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lviv",
+        "addressCountry": "Ukraine"
+      },
       "sameAs": [
         "https://github.com/vadko",
         "https://linkedin.com/in/vadym-pohlid-85415211a",
-        "https://t.me/vadkointel"
+        "https://t.me/vadkointel",
+        "https://upwork.com/freelancers/~01ce35a1a69ab367d8"
       ],
-      "knowsAbout": ["React Native", "TypeScript", "JavaScript", "Mobile Development"]
+      "knowsAbout": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "JavaScript",
+        "Mobile Development",
+        "Java",
+        "Kotlin",
+        "Swift",
+        "Objective-C",
+        "Reanimated",
+        "Redux",
+        "Supabase",
+        "Node.js",
+        "Electron",
+        "Docker",
+        "CI/CD",
+        "GitHub Actions",
+        "Fastlane"
+      ],
+      "knowsLanguage": ["English", "Ukrainian"],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Experience",
+          "name": "6+ years in React Native Development"
+        }
+      ]
     })} />
   </head>
   <body class="antialiased">
