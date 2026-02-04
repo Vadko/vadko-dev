@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const technologies: string[] = [
+  'React Native', 'TypeScript', 'JavaScript', 'Reanimated', 
+  'MobX', 'Redux', 'Firebase', 'Node.js', 'Electron', 'Docker', 'Git', 'CI/CD'
+];
+
+const nativeLanguages: string[] = ['Java', 'Kotlin', 'Swift', 'Objective-C'];
+
+const mainTech: string[] = ['React Native', 'TypeScript', 'Reanimated', 'MobX'];
+
+const cicdSkills: string[] = [
+  'GitHub Actions', 'Fastlane', 'App Store Connect', 'Google Play Console',
+  'CodePush', 'TestFlight', 'Firebase App Distribution', 'Bitrise'
+];
+---
+
+<Layout title="Vadym Pohlid — Senior React Native Developer">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-zinc-800/50">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold text-white hover:text-blue-400 transition-colors">
+        vadko<span class="text-blue-500">.dev</span>
+      </a>
+      <div class="flex gap-6 text-sm text-zinc-400">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#work" class="hover:text-white transition-colors">Work</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-6">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center pt-20">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          Open to interesting opportunities
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+          Hi, I'm <span class="text-blue-500">Vadym</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl">
+          Senior React Native Developer with <span class="text-white font-medium">6+ years</span> of experience 
+          in hybrid mobile development. Passionate about delivering crisp UI/UX and rock-solid quality control.
+        </p>
+        
+        <div class="flex flex-wrap gap-3 pt-4">
+          {mainTech.map((tech) => (
+            <span class="px-3 py-1 bg-zinc-800 rounded-full text-sm text-zinc-300">{tech}</span>
+          ))}
+        </div>
+        
+        <div class="flex gap-4 pt-6">
+          <a href="#contact" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
+            Get in Touch
+          </a>
+          <a href="#projects" class="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-medium rounded-lg transition-colors">
+            View Projects
+          </a>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24">
+      <h2 class="text-3xl font-bold text-white mb-8">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="space-y-4 text-zinc-400 text-lg leading-relaxed">
+          <p>
+            I'm a mobile developer from Ukraine with <span class="text-white">6+ years</span> of experience 
+            in hybrid mobile development. Expert in <span class="text-white">React Native</span>, TypeScript, 
+            and delivering crisp UI/UX with <span class="text-white">Reanimated</span>.
+          </p>
+          <p>
+            Strong background in <span class="text-white">CI/CD pipelines</span> for mobile apps — from 
+            automated builds to App Store and Google Play deployments. Experienced in leading team operations 
+            and driving performance improvements.
+          </p>
+          <p>
+            I also have hands-on experience with native languages: 
+            <span class="text-white">Java, Kotlin, Swift, and Objective-C</span> for bridging and native modules.
+          </p>
+          <p>
+            Besides work, I'm passionate about open-source and Ukrainian game localization.
+          </p>
+        </div>
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-4">Core Technologies</h3>
+            <div class="grid grid-cols-2 gap-3">
+              {technologies.map((tech) => (
+                <div class="flex items-center gap-2 text-zinc-400">
+                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                  {tech}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-4">Mobile CI/CD</h3>
+            <div class="flex flex-wrap gap-2">
+              {cicdSkills.map((skill) => (
+                <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-sm text-emerald-400">{skill}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24">
+      <h2 class="text-3xl font-bold text-white mb-8">Current Work</h2>
+      <div class="p-8 bg-gradient-to-br from-zinc-900 to-zinc-900/50 border border-zinc-800 rounded-2xl">
+        <div class="flex items-start gap-6">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shrink-0">
+            S
+          </div>
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-2xl font-bold text-white">Shares</h3>
+              <p class="text-emerald-400 font-medium">Senior React Native Developer</p>
+            </div>
+            <p class="text-zinc-400 text-lg leading-relaxed">
+              Working on a mobile investment app. Responsible for product features, complex animations with 
+              Reanimated, architectural solutions, performance optimization, and security. 
+              Leading CI/CD operations and driving continuous improvement across the mobile team.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2">
+              {mainTech.map((tech) => (
+                <span class="px-3 py-1 bg-zinc-800 rounded-full text-sm text-zinc-300">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+      <h2 class="text-3xl font-bold text-white mb-8">Open Source & Projects</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- LBK Launcher -->
+        <div class="group p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">LBK Launcher</h3>
+              <p class="text-zinc-500 text-sm">Ukrainian Game Localizer</p>
+            </div>
+          </div>
+          <p class="text-zinc-400 mb-4">
+            Desktop application for installing Ukrainian translations in games. 
+            Automatic game detection, Steam Deck support, dark and light themes.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-zinc-500 mb-4">
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+              </svg>
+              41 stars
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              474+ games
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              64k+ downloads
+            </span>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">Electron</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">React</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">TypeScript</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">Supabase</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://lbklauncher.com" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 text-sm font-medium">
+              Website →
+            </a>
+            <a href="https://github.com/Vadko/littlebit-launcher" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white text-sm font-medium">
+              GitHub →
+            </a>
+          </div>
+        </div>
+
+        <!-- react-native-file-viewer-turbo -->
+        <div class="group p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-yellow-500/50 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">react-native-file-viewer-turbo</h3>
+              <p class="text-zinc-500 text-sm">Native File Viewer for React Native</p>
+            </div>
+          </div>
+          <p class="text-zinc-400 mb-4">
+            A maintained fork of react-native-file-viewer with TurboModules and Expo support. 
+            Uses QuickLook on iOS and ACTION_VIEW intent on Android. New Architecture only.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-zinc-500 mb-4">
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              TurboModules
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              Expo SDK 52+
+            </span>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">React Native</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">TypeScript</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">TurboModules</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">Expo</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://www.npmjs.com/package/react-native-file-viewer-turbo" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:text-yellow-300 text-sm font-medium">
+              npm →
+            </a>
+            <a href="https://github.com/Vadko/react-native-file-viewer-turbo" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white text-sm font-medium">
+              GitHub →
+            </a>
+          </div>
+        </div>
+
+        <!-- Hytale Server -->
+        <div class="group p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-orange-500/50 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">Hytale Server</h3>
+              <p class="text-zinc-500 text-sm">Game Server</p>
+            </div>
+          </div>
+          <p class="text-zinc-400 mb-4">
+            Personal Hytale game server hosted at play.vadko.dev. 
+            A place for friends and community to play together when Hytale launches.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-zinc-500 mb-4">
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+              </svg>
+              play.vadko.dev
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              Community
+            </span>
+          </div>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">Hytale</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">Gaming</span>
+            <span class="px-2 py-1 bg-zinc-800 rounded text-xs text-zinc-400">Community</span>
+          </div>
+          <div class="flex gap-3">
+            <a href="https://play.vadko.dev" target="_blank" rel="noopener noreferrer" class="text-orange-400 hover:text-orange-300 text-sm font-medium">
+              Join Server →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+      <h2 class="text-3xl font-bold text-white mb-8">Contact</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+          <p class="text-zinc-400 text-lg">
+            Interested in working together? Drop me a message — I'm always open to 
+            interesting opportunities and new projects.
+          </p>
+          <a href="mailto:vadkointel@icloud.com" class="inline-flex items-center gap-2 text-xl text-blue-400 hover:text-blue-300 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            vadkointel@icloud.com
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <a href="https://github.com/vadko" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-600 transition-colors">
+            <svg class="w-6 h-6 text-zinc-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span class="text-zinc-300">GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/vadym-pohlid-85415211a" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-600 transition-colors">
+            <svg class="w-6 h-6 text-zinc-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span class="text-zinc-300">LinkedIn</span>
+          </a>
+          <a href="https://t.me/vadkointel" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-600 transition-colors">
+            <svg class="w-6 h-6 text-zinc-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            <span class="text-zinc-300">Telegram</span>
+          </a>
+          <a href="https://upwork.com/freelancers/~01ce35a1a69ab367d8" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 p-4 bg-zinc-900/50 border border-zinc-800 rounded-xl hover:border-zinc-600 transition-colors">
+            <svg class="w-6 h-6 text-zinc-400" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/>
+            </svg>
+            <span class="text-zinc-300">Upwork</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-800 py-8">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-sm">
+      <p>© 2024 Vadym Pohlid. All rights reserved.</p>
+      <p>Made with ❤️ in Ukraine 🇺🇦</p>
+    </div>
+  </footer>
+</Layout>

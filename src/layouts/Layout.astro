@@ -1,0 +1,71 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Senior React Native Developer with 6+ years of experience. Creator of LBK Launcher and Hytale server host." 
+} = Astro.props;
+
+const siteUrl = "https://vadko.dev";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Vadym Pohlid" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>{title}</title>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vadym Pohlid",
+      "alternateName": "Vadko",
+      "url": siteUrl,
+      "jobTitle": "Senior React Native Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Shares"
+      },
+      "sameAs": [
+        "https://github.com/vadko",
+        "https://linkedin.com/in/vadym-pohlid-85415211a",
+        "https://t.me/vadkointel"
+      ],
+      "knowsAbout": ["React Native", "TypeScript", "JavaScript", "Mobile Development"]
+    })} />
+  </head>
+  <body class="antialiased">
+    <slot />
+  </body>
+</html>
