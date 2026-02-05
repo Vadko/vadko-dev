@@ -26,7 +26,25 @@ const canonicalUrl = Astro.url.pathname === "/" ? siteUrl : `${siteUrl}${Astro.u
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
+    
+    <!-- Mobile Web App -->
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    
     <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- DNS Prefetch & Preconnect for external resources -->
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link rel="dns-prefetch" href="https://linkedin.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload OG Image for faster social sharing -->
+    <link rel="preload" as="image" href="/og-image.png" />
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -36,6 +54,7 @@ const canonicalUrl = Astro.url.pathname === "/" ? siteUrl : `${siteUrl}${Astro.u
     <meta property="og:image" content={`${siteUrl}/og-image.png`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Vadym Pohlid — Senior React Native Developer" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Vadym Pohlid — Senior React Native Developer" />
     
@@ -49,15 +68,15 @@ const canonicalUrl = Astro.url.pathname === "/" ? siteUrl : `${siteUrl}${Astro.u
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <title>{title}</title>
     
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data: Person -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
@@ -109,6 +128,70 @@ const canonicalUrl = Astro.url.pathname === "/" ? siteUrl : `${siteUrl}${Astro.u
           "name": "6+ years in React Native Development"
         }
       ]
+    })} />
+    
+    <!-- JSON-LD Structured Data: WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Vadym Pohlid — Senior React Native Developer",
+      "alternateName": "Vadko.dev",
+      "url": siteUrl,
+      "description": "Portfolio website of Vadym Pohlid, Senior React Native Developer with 6+ years of experience",
+      "author": {
+        "@type": "Person",
+        "name": "Vadym Pohlid"
+      },
+      "inLanguage": "en",
+      "hasPart": [
+        {
+          "@type": "SiteNavigationElement",
+          "name": "About",
+          "url": `${siteUrl}/#about`
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Work Experience",
+          "url": `${siteUrl}/#work`
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Projects",
+          "url": `${siteUrl}/#projects`
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Contact",
+          "url": `${siteUrl}/#contact`
+        }
+      ]
+    })} />
+    
+    <!-- JSON-LD Structured Data: LBK Launcher Software -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "LBK Launcher",
+      "applicationCategory": "DesktopApplication",
+      "operatingSystem": "Windows, macOS",
+      "description": "Desktop application for Little Big Workshop game with 64k+ downloads",
+      "downloadUrl": "https://lbklauncher.com",
+      "softwareVersion": "1.0",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "64000"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Vadym Pohlid",
+        "url": siteUrl
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     })} />
   </head>
   <body class="antialiased">
