@@ -7,6 +7,7 @@ async function fetchJson(url) {
   const response = await fetch(url, {
     headers: {
       accept: 'application/json',
+      'user-agent': 'vadko-dev-stats',
     },
   });
 
