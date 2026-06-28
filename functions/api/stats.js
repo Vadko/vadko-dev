@@ -3,6 +3,20 @@ const headers = {
   'cache-control': 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400',
 };
 
+const fallbackStats = {
+  lbk: {
+    stars: 69,
+    games: 772,
+    downloads: 298678,
+  },
+  fileViewer: {
+    stars: 49,
+    forks: 6,
+    version: '0.7.5',
+    monthlyDownloads: 39500,
+  },
+};
+
 async function fetchJson(url) {
   const response = await fetch(url, {
     headers: {
@@ -18,6 +32,22 @@ async function fetchJson(url) {
   return response.json();
 }
 
+async function fetchJsonOrNull(url) {
+  try {
+    return await fetchJson(url);
+  } catch {
+    return null;
+  }
+}
+
+function numberOr(value, fallback) {
+  return Number.isFinite(value) ? value : fallback;
+}
+
+function stringOr(value, fallback) {
+  return typeof value === 'string' && value.length > 0 ? value : fallback;
+}
+
 export async function onRequestGet() {
   try {
     const [
@@ -28,24 +58,24 @@ export async function onRequestGet() {
       fileViewerPackage,
       fileViewerDownloads,
     ] = await Promise.all([
-      fetchJson('https://api.github.com/repos/Vadko/lbk-launcher'),
-      fetchJson('https://lbklauncher.com/api/games-count'),
-      fetchJson('https://lbklauncher.com/api/github-releases'),
-      fetchJson('https://api.github.com/repos/Vadko/react-native-file-viewer-turbo'),
-      fetchJson('https://registry.npmjs.org/react-native-file-viewer-turbo/latest'),
-      fetchJson('https://api.npmjs.org/downloads/point/last-month/react-native-file-viewer-turbo'),
+      fetchJsonOrNull('https://api.github.com/repos/Vadko/lbk-launcher'),
+      fetchJsonOrNull('https://lbklauncher.com/api/games-count'),
+      fetchJsonOrNull('https://lbklauncher.com/api/github-releases'),
+      fetchJsonOrNull('https://api.github.com/repos/Vadko/react-native-file-viewer-turbo'),
+      fetchJsonOrNull('https://registry.npmjs.org/react-native-file-viewer-turbo/latest'),
+      fetchJsonOrNull('https://api.npmjs.org/downloads/point/last-month/react-native-file-viewer-turbo'),
     ]);
 
     return new Response(
       JSON.stringify({
-        stars: lbkRepo.stargazers_count,
-        games: gamesCount.count,
-        downloads: releases.totalDownloads,
+        stars: numberOr(lbkRepo?.stargazers_count, fallbackStats.lbk.stars),
+        games: numberOr(gamesCount?.count, fallbackStats.lbk.games),
+        downloads: numberOr(releases?.totalDownloads, fallbackStats.lbk.downloads),
         fileViewer: {
-          stars: fileViewerRepo.stargazers_count,
-          forks: fileViewerRepo.forks_count,
-          version: fileViewerPackage.version,
-          monthlyDownloads: fileViewerDownloads.downloads,
+          stars: numberOr(fileViewerRepo?.stargazers_count, fallbackStats.fileViewer.stars),
+          forks: numberOr(fileViewerRepo?.forks_count, fallbackStats.fileViewer.forks),
+          version: stringOr(fileViewerPackage?.version, fallbackStats.fileViewer.version),
+          monthlyDownloads: numberOr(fileViewerDownloads?.downloads, fallbackStats.fileViewer.monthlyDownloads),
         },
         updatedAt: new Date().toISOString(),
       }),
