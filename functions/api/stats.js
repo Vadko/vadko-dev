@@ -20,17 +20,33 @@ async function fetchJson(url) {
 
 export async function onRequestGet() {
   try {
-    const [repo, gamesCount, releases] = await Promise.all([
+    const [
+      lbkRepo,
+      gamesCount,
+      releases,
+      fileViewerRepo,
+      fileViewerPackage,
+      fileViewerDownloads,
+    ] = await Promise.all([
       fetchJson('https://api.github.com/repos/Vadko/lbk-launcher'),
       fetchJson('https://lbklauncher.com/api/games-count'),
       fetchJson('https://lbklauncher.com/api/github-releases'),
+      fetchJson('https://api.github.com/repos/Vadko/react-native-file-viewer-turbo'),
+      fetchJson('https://registry.npmjs.org/react-native-file-viewer-turbo/latest'),
+      fetchJson('https://api.npmjs.org/downloads/point/last-month/react-native-file-viewer-turbo'),
     ]);
 
     return new Response(
       JSON.stringify({
-        stars: repo.stargazers_count,
+        stars: lbkRepo.stargazers_count,
         games: gamesCount.count,
         downloads: releases.totalDownloads,
+        fileViewer: {
+          stars: fileViewerRepo.stargazers_count,
+          forks: fileViewerRepo.forks_count,
+          version: fileViewerPackage.version,
+          monthlyDownloads: fileViewerDownloads.downloads,
+        },
         updatedAt: new Date().toISOString(),
       }),
       { headers },
