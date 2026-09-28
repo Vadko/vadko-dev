@@ -1,31 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const technologies: string[] = [
-  'React Native', 'Expo', 'TypeScript', 'JavaScript', 'Reanimated',
-  'Full-stack Development', 'Next.js', 'Astro', 'Supabase', 'PostgreSQL',
-  'Express', 'NestJS', 'Node.js', 'Electron', 'Docker', 'Git', 'Bash', 'CI/CD'
+const technologyGroups = [
+  { name: 'Mobile', technologies: ['React Native', 'Expo', 'Reanimated', 'Native Modules', 'Swift', 'Kotlin'] },
+  { name: 'Web', technologies: ['React', 'Next.js', 'Astro', 'Electron'] },
+  { name: 'Backend', technologies: ['Node.js', 'TypeScript', 'PostgreSQL', 'Express', 'NestJS', 'Supabase', 'AWS'] },
+  { name: 'DevOps', technologies: ['Docker', 'GitHub Actions', 'Fastlane', 'EAS', 'Git'] },
 ];
 
-const nativeLanguages: string[] = ['Java', 'Kotlin', 'Swift', 'Objective-C'];
+const mainTech: string[] = ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'React', 'Expo'];
 
-const mainTech: string[] = [
-  'React Native', 'Expo', 'TypeScript', 'Reanimated', 'Full-stack',
-  'Next.js', 'Astro', 'Supabase', 'PostgreSQL', 'Express', 'NestJS', 'Node.js', 'Docker'
-];
-
-const sharesTech: string[] = [
-  'React Native', 'Expo', 'TypeScript', 'Reanimated', 'Native Modules',
-  'PostgreSQL', 'Express', 'CI/CD', 'Security', 'Performance'
-];
-
-const cicdSkills: string[] = [
-  'GitHub Actions', 'Fastlane', 'App Store Connect', 'Google Play Console',
-  'TestFlight', 'Bitrise', 'EAS Build', 'EAS Submit'
-];
+const sharesTech: string[] = ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'React', 'AWS', 'CI/CD'];
 ---
 
-<Layout title="Vadym Pohlid — Senior React Native Developer">
+<Layout title="Vadym Pohlid — Senior Full-stack Engineer">
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-zinc-800/50">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -69,8 +57,7 @@ const cicdSkills: string[] = [
         </h1>
         
         <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl">
-          Senior React Native Developer with <span class="text-white font-medium">6+ years</span> of experience 
-          in hybrid mobile development. Passionate about delivering crisp UI/UX and rock-solid quality control.
+          Senior Full-stack Engineer with 8+ years of experience. I build mobile apps, web tools and backend services, React Native first and TypeScript end to end.
         </p>
         
         <div class="flex flex-wrap gap-3 pt-4">
@@ -103,49 +90,42 @@ const cicdSkills: string[] = [
       <div class="grid md:grid-cols-2 gap-12">
         <div class="space-y-4 text-zinc-400 text-lg leading-relaxed">
           <p>
-            I'm a mobile developer from Ukraine with <span class="text-white">6+ years</span> of experience 
-            in hybrid mobile development. Expert in <span class="text-white">React Native</span>, <span class="text-white">Expo</span>, TypeScript, 
-            and delivering crisp UI/UX with <span class="text-white">Reanimated</span>.
+            I'm a full-stack engineer from Ukraine with 8+ years of experience. I started in mobile and still ship React Native, but these days I work across the whole product: mobile apps, backend services and internal web tools.
           </p>
           <p>
-            Strong background in <span class="text-white">native development</span> — proficient in 
-            <span class="text-white">Java, Kotlin, Swift, and Objective-C</span> for building custom 
-            native modules, bridging, and deep platform integration.
+            Strong native background: Java, Kotlin, Swift and Objective-C for custom native modules and deep platform integration.
           </p>
           <p>
-            Experienced in <span class="text-white">CI/CD pipelines</span> for mobile apps — from 
-            automated builds with GitHub Actions and Fastlane to App Store and Google Play deployments. 
-            Driving performance improvements and optimizing development workflows.
+            On the backend I work with Node.js, TypeScript and PostgreSQL, building APIs, async workflows and financial operations for a fintech investment platform.
           </p>
           <p>
-            Also comfortable across the <span class="text-white">full-stack</span>: building APIs with 
-            <span class="text-white">NestJS</span>, working with <span class="text-white">PostgreSQL</span>, 
-            and shipping products on <span class="text-white">Supabase</span>.
+            Experienced in CI/CD for mobile and backend, from GitHub Actions and Fastlane to App Store and Google Play releases.
+          </p>
+          <p>
+            I use AI coding agents daily and write the instructions and skills that make them effective on a large codebase.
           </p>
           <p>
             Besides work, I'm passionate about open-source and Ukrainian game localization.
           </p>
         </div>
-        <div class="space-y-6">
-          <div>
-            <h3 class="text-xl font-semibold text-white mb-4">Core Technologies</h3>
-            <div class="grid grid-cols-2 gap-3">
-              {technologies.map((tech) => (
-                <div class="flex items-center gap-2 text-zinc-400">
-                  <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
-                  {tech}
+        <div>
+          <h3 class="text-xl font-semibold text-white mb-4">Core Technologies</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {technologyGroups.map((group) => (
+              <div>
+                <h4 class="text-sm font-medium text-zinc-300 mb-3">{group.name}</h4>
+                <div class="space-y-2">
+                  {group.technologies.map((tech) => (
+                    <div class="flex items-center gap-2 text-zinc-400">
+                      <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                      {tech}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-          <div>
-            <h3 class="text-xl font-semibold text-white mb-4">Mobile CI/CD</h3>
-            <div class="flex flex-wrap gap-2">
-              {cicdSkills.map((skill) => (
-                <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-sm text-emerald-400">{skill}</span>
-              ))}
-            </div>
-          </div>
+        </div>
         </div>
       </div>
     </section>
@@ -168,15 +148,18 @@ const cicdSkills: string[] = [
               <div class="flex justify-between items-start">
                 <div>
                   <h3 class="text-2xl font-bold text-white">Shares</h3>
-                  <p class="text-[#7971f5] font-medium">Senior React Native Developer</p>
+                  <p class="text-[#7971f5] font-medium">Senior Full-stack Engineer</p>
                 </div>
                 <span class="text-zinc-500 text-sm">2022 — Present</span>
               </div>
               <p class="text-zinc-400 text-lg leading-relaxed">
-                Working on a mobile investment app. Responsible for product features, 
-                performance optimization, and security. 
-                Managing CI/CD operations and driving continuous improvement across the mobile team.
+                Working on a fintech investment platform: B2C and B2B mobile apps, backend services and back-office tools.
               </p>
+              <ul class="space-y-2 text-zinc-400 leading-relaxed list-disc list-inside">
+                <li>React Native apps: product features, performance, security and mobile CI/CD.</li>
+                <li>Node.js and PostgreSQL backend for investment operations: corporate actions, ledger accounting, broker and custodian integrations.</li>
+                <li>React back-office tools for the operations team.</li>
+              </ul>
               <div class="flex flex-wrap gap-2 pt-2">
                 {sharesTech.map((tech) => (
                   <span class="px-3 py-1 bg-zinc-800 rounded-full text-sm text-zinc-300">{tech}</span>
@@ -373,8 +356,7 @@ const cicdSkills: string[] = [
       <div class="grid md:grid-cols-2 gap-8">
         <div class="space-y-4">
           <p class="text-zinc-400 text-lg">
-            Interested in working together? Drop me a message — I'm always open to 
-            interesting opportunities and new projects.
+            Interested in working together? I'm open to full-stack and React Native projects. Drop me a message.
           </p>
           <a href="mailto:vadkointel@icloud.com" class="inline-flex items-center gap-2 text-xl text-blue-400 hover:text-blue-300 transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
