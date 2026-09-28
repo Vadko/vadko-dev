@@ -13,7 +13,7 @@ const {
 
 const siteUrl = "https://vadko.dev";
 const canonicalUrl = Astro.url.pathname === "/" ? siteUrl : `${siteUrl}${Astro.url.pathname}`;
-const ogImageUrl = `${siteUrl}/og-image.png?v=20260928`;
+const ogImageUrl = `${siteUrl}/og-image.png?v=20260928-2`;
 ---
 
 <!doctype html>
@@ -45,7 +45,7 @@ const ogImageUrl = `${siteUrl}/og-image.png?v=20260928`;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
     <!-- Preload OG Image for faster social sharing -->
-    <link rel="preload" as="image" href="/og-image.png?v=20260928" />
+    <link rel="preload" as="image" href="/og-image.png?v=20260928-2" />
     
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -103,6 +103,10 @@ const ogImageUrl = `${siteUrl}/og-image.png?v=20260928`;
       ],
       "knowsAbout": [
         "React Native",
+        "Backend Development",
+        "React",
+        "AWS",
+        "Fintech",
         "Expo",
         "TypeScript",
         "JavaScript",
@@ -182,12 +186,6 @@ const ogImageUrl = `${siteUrl}/og-image.png?v=20260928`;
       "operatingSystem": "Windows, macOS",
       "description": "Desktop application for Ukrainian game localizations with 298k+ downloads",
       "downloadUrl": "https://lbklauncher.com",
-      "softwareVersion": "1.0",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "298678"
-      },
       "author": {
         "@type": "Person",
         "name": "Vadym Pohlid",
